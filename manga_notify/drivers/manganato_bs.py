@@ -1,5 +1,5 @@
 from .basic_mangakakalot_bs import BasicMangakakalotBs
 
-class MangakakalotBs(BasicMangakakalotBs):
+class MangaNatoBs(BasicMangakakalotBs):
     def is_match(self, url: str) -> bool:
-        return 'mangakakalot' in url
+        return 'chapmanganato' in url

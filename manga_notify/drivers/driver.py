@@ -8,6 +8,7 @@ from ..database import feed_storage
 
 class DriverType(str):
     MangakakalotBs = 'mangakakalot_bs'
+    MangaNatoBs = 'manganato_bs'
     MangaseeRss = 'mangasee_rss'
     ReadmangaRss = 'readmanga_rss'
     SovetRomanticaBs = 'sovet_romantica_bs'

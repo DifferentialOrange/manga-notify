@@ -2,6 +2,7 @@ import typing
 
 from . import driver
 from . import mangakakalot_bs
+from . import manganato_bs
 from . import sovet_romantica_bs
 from . import mangasee_rss
 from . import readmanga_rss
@@ -14,12 +15,14 @@ class DriverFactory:
     def __init__(self):
         self.mangasee = mangasee_rss.MangaseeRss()
         self.mangakakalot = mangakakalot_bs.MangakakalotBs()
+        self.manganato = manganato_bs.MangaNatoBs()
         self.readmanga = readmanga_rss.ReadmangaRss()
         self.sovet_romantica = sovet_romantica_bs.SovetRomanticaBs()
 
     def _map(self) -> typing.Dict[str, driver.Driver]:
         return {
             driver.DriverType.MangakakalotBs: self.mangakakalot,
+            driver.DriverType.MangaNatoBs: self.manganato,
             driver.DriverType.MangaseeRss: self.mangasee,
             driver.DriverType.ReadmangaRss: self.readmanga,
             driver.DriverType.SovetRomanticaBs: self.sovet_romantica,
@@ -36,6 +39,8 @@ class DriverFactory:
             return self.mangasee
         if driver_type == driver.DriverType.MangakakalotBs:
             return self.mangakakalot
+        if driver_type == driver.DriverType.MangaNatoBs:
+            return self.manganato
         if driver_type == driver.DriverType.ReadmangaRss:
             return self.readmanga
         if driver_type == driver.DriverType.SovetRomanticaBs:
