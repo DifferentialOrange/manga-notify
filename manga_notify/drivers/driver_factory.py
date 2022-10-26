@@ -45,4 +45,4 @@ class DriverFactory:
             return self.readmanga
         if driver_type == driver.DriverType.SovetRomanticaBs:
             return self.sovet_romantica
-        raise ValueError(f"Unknow driver {driver_type}")
+        raise ValueError(f"Unknown driver {driver_type}")
